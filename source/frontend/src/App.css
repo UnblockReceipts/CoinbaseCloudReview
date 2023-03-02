@@ -1,0 +1,106 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  font-family: "Manrope", sans-serif;
+}
+
+.App-header {
+  background: linear-gradient(
+    to left bottom,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #85a0e1,
+    #74a4de,
+    #67a8d7,
+    #5ba6c7,
+    #59a2b5,
+    #5e9da4,
+    #669794
+  );
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.txReceiptsTable tbody td {
+  word-wrap: break-word;
+}
+
+.txReceiptsTable {
+  border-collapse: collapse;
+  border-bottom: thin black solid;
+  width: 100%;
+}
+
+.txReceiptsTable tbody tr.singleTxReceipt {
+  border-top: thin black solid;
+}
+
+.txReceiptsTable tbody tr.memo {
+  font-style: italic;
+}
+
+#txHashInput {
+  width: 38em;
+  margin-right: 5px;
+}
+
+#acctInput {
+  width: 27em;
+}
+
+.slogan {
+  font-style: italic;
+  float: right;
+  padding: 10px;
+}
+
+.mode {
+  text-align: center;
+}
+
+.receiptAndExplanationWrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
+
+.dateRangePicker {
+  /*TODO: Learn how to override these styles more correctly.*/
+  vertical-align: middle !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+  margin-top: 5px !important;
+}
+
+.dateRangePicker input,
+.dateRangePicker .MuiFormControl-root,
+.dateRangePicker label,
+.dateRangePicker button
+{
+  background: white;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
