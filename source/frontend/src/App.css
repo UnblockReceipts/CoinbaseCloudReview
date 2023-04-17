@@ -1,91 +1,193 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-  font-family: "Manrope", sans-serif;
+	height: 40vmin;
+	pointer-events: none;
+	font-family: 'Manrope', sans-serif;
 }
 
-.App-header {
-  background: linear-gradient(
-    to left bottom,
-    #d16ba5,
-    #c777b9,
-    #ba83ca,
-    #aa8fd8,
-    #9a9ae1,
-    #85a0e1,
-    #74a4de,
-    #67a8d7,
-    #5ba6c7,
-    #59a2b5,
-    #5e9da4,
-    #669794
-  );
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.homepage, .docsPage {
+	background: linear-gradient(
+		to left bottom,
+		#d16ba5,
+		#c777b9,
+		#ba83ca,
+		#aa8fd8,
+		#9a9ae1,
+		#85a0e1,
+		#74a4de,
+		#67a8d7,
+		#5ba6c7,
+		#59a2b5,
+		#5e9da4,
+		#669794
+	);
+	color: white;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.homepage {
+	font-size: calc(10px + 2vmin);
+	align-items: center;
+	justify-content: center;
+}
+
+.docsPage {
+	font-size: calc(11px + 1vmin);
+	text-align: left;
+}
+
+.docsPageContent {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.docsPage h1 {
+	text-align: center;
+}
+
+div.homepageParagraph { /* Can't use p element because p can't contain div, fieldset, or other inputs.*/
+	margin: 1em 0;
 }
 
 .App-link {
-  color: #61dafb;
+	color: #61dafb;
 }
 
 .txReceiptsTable tbody td {
-  word-wrap: break-word;
+	word-wrap: break-word;
+	padding-right: 1ch; /* prevents hex addresses that wrap from seeming to run into each other across cols*/
+}
+
+a.txID,
+span.hexAddress
+{
+	word-break: break-all;
+}
+
+span.breakableUndisplayedSpace {
+	font-size: 1px;
+	word-break: break-all;
 }
 
 .txReceiptsTable {
-  border-collapse: collapse;
-  border-bottom: thin black solid;
-  width: 100%;
+	border-collapse: collapse;
+	border-bottom: thin black solid;
+	width: 100%;
+}
+
+.txReceiptsList {
+	border-top: thin black solid;
+	width: 100%;
+	list-style-type: none; /* Remove bullets */
+	padding-left: 0;
+	margin-left: 0;
+}
+
+.txReceiptsList li.singleTxReceipt {
+	border-bottom: thin black solid;
+	width: 100%;
 }
 
 .txReceiptsTable tbody tr.singleTxReceipt {
-  border-top: thin black solid;
+	border-top: thin black solid;
 }
 
-.txReceiptsTable tbody tr.memo {
-  font-style: italic;
+.footnoteRef a {
+	text-decoration: none;
 }
 
-#txHashInput {
-  width: 38em;
-  margin-right: 5px;
+table.acctLabels {
+	border-collapse: collapse;
+	margin-top: 1em;
+	max-width: 100%;
 }
 
-#acctInput {
-  width: 27em;
+table.acctLabels td {
+	border: thin black solid;
+	padding: 0.2em;
+}
+
+table.acctLabels td:first-child {
+	text-align: right;
+}
+
+div.acctLabel {
+	margin-top: 1em;
+}
+
+.txHashInput {
+	width: 69ch;
+	max-width: 94vw;
+}
+
+.addressInput {
+	width: 64ch;
+	max-width: 94vw;
+}
+
+.homepage .MuiButton-root {
+	text-transform: none !important; /*TODO: Find better way to override */
+}
+
+.homepage .MuiTextField-root {
+	vertical-align: middle !important;
+}
+
+.homepageDetail {
+	font-style: italic;
+	font-size: 0.8em;
+}
+
+.logoBlock {
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	text-align: center;
+}
+
+.logoBlock img {
+	width: 16em;
+	max-width: calc(100% - 2em); /*2em accounts for padding*/
+	padding: 1em;
 }
 
 .slogan {
-  font-style: italic;
-  float: right;
-  padding: 10px;
+	font-style: italic;
+	padding: 10px;
 }
 
-.mode {
-  text-align: center;
+.receiptDescription {
+	text-align: center;
+}
+
+p.errors {
+	text-align: center;
+	color: red;
+}
+
+.progressStepDescription {
+	text-align: center;
+	margin-bottom: 0;
 }
 
 .receiptAndExplanationWrapper {
-  margin-left: auto;
-  margin-right: auto;
-  width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 95%;
 }
 
 .dateRangePicker {
-  /*TODO: Learn how to override these styles more correctly.*/
-  vertical-align: middle !important;
-  margin-left: 5px !important;
-  margin-right: 5px !important;
-  margin-top: 5px !important;
+	/*TODO: Learn how to override these styles more correctly.*/
+	vertical-align: middle !important;
+	margin-left: 5px !important;
+	margin-right: 5px !important;
+	margin-top: 5px !important;
+	margin-bottom: 5px !important;
 }
 
 .dateRangePicker input,
@@ -93,14 +195,105 @@
 .dateRangePicker label,
 .dateRangePicker button
 {
-  background: white;
+	background: white;
+}
+
+.etherscanLimit {
+	background-color: lightpink;
+	font-weight: bold;
+}
+
+.actionButtons {
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+/* Inspired by https://github.com/siriwatknp/mui-treasury/blob/master/packages/mui-styles/src/button/arrowDark/arrowDarkButton.styles.js */
+.actionButtons .actionButton {
+	/*border-radius: 50%;*/
+	border: 1px solid !important; /*TODO: Learn better way to override*/
+	margin: 6px; /*TODO: define as % of size to support scale factor below */
+}
+.actionButtons .actionButton:hover {
+	scale: 1.3;
+	transition: cubic-bezier(.47, 1.64, .41, .8)
+}
+
+.inlineActionButton {/* should identify better MUI override */
+	padding: 0 !important;
+	font-size: 1em !important;
+	height: 1em;
+}
+.inlineActionButtonWrapper:not(.addMemoButton) svg {
+	font-size: 1em !important;
+}
+.inputWrapper input {
+	height: 1em;
+}
+.memoInsideTD {
+	width: 100%;
+}
+.memo {
+	font-style: italic;
+}
+table.acctLabels td .editableAcctLabel,
+td .editableAcctLabel .editableTextInEditMode {
+	width: 100%;
+}
+table.txReceiptsTable td .tableDisplayAddressEditing {
+	width: 100%;
+	display: inline-flex;
+}
+table.txReceiptsTable td .tableDisplayAddressEditing .editableAcctLabel{
+	flex-grow: 1;
+}
+.acctLabels .MuiFormControl-root::after,
+li.singleTxReceipt .tableDisplayAddressEditing .MuiFormControl-root::after {
+	/* See https://css-tricks.com/auto-growing-inputs-textareas/ */
+	content: 'Pads ' attr(data-value);
+	visibility: hidden;
+	line-height: 0;
+}
+.memoInsideTD,
+.editableTextInEditMode
+{
+	display: inline-flex;
+	align-items: center;
+}
+.memoInsideTD .editableTextInEditMode {
+	flex-grow: 1;
+}
+.editableTextInEditMode .inputWrapper
+{
+	flex-grow: 1;
+}
+.alignWithRadioLabels {
+	vertical-align: middle;
+	margin-left: 1ch;
+	margin-right: 1ch;
+}
+
+:root {
+	--account-center-z-index: 2;
+}
+
+@media print {
+	.inlineActionButton,
+	.inlineActionButtonWrapper,
+	.notForPrinting
+	{
+		display: none !important;
+	}
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }

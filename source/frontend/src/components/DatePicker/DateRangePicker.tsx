@@ -1,6 +1,6 @@
 //TODO: Replace once https://github.com/mui/mui-x/issues/4547 lands (Q2 2023 planned)
-import Picker from "./Picker";
-import { useState } from "react";
+import Picker from './Picker';
+import { useState } from 'react';
 interface RangeProps {
 	rangeStart?: Date,
 	rangeEnd?: Date,
@@ -34,14 +34,14 @@ export default function DateRangePicker(RangeProps: RangeProps) {
 	return (
 		<span className='dateRangePicker'>
 			<Picker
-				labelText="Filter by date/time start"
+				labelText='Filter by date/time start'
 				maxDateTime = {rangeStartMax}
 				onChange = {onRangeStartChange}
 				value = {rangeStart}
 			/>
-			 -
+			{' - '}
 			<Picker
-				labelText="Filter by date/time end"
+				labelText='Filter by date/time end'
 				minDateTime = {rangeEndMin}
 				maxDateTime = {now}
 				onChange = {onRangeEndChange}
